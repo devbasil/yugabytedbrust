@@ -431,19 +431,22 @@ async fn main() -> Result<(), std::io::Error> {
 > create_new_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/create
 
 
-> select_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/profile
+> select_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/read
 
 
-> update_full_name_and_age_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/create
+> update_full_name_and_age_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/update
 
 
 > delete_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/delete
 
 
 
-## REAL WORKING APP EXAMPLE USING ACTIX WEB, YOU MAY USE ANY WEB FRAMEWORK YOU WANT
+### FOR A WORKING APP EXAMPLE USING ACTIX WEB
 
-Check how to invoke the query functions with appropriate parameters by cloning a working REST JSON API example see the *crud_controller.rs*
+You can check how to invoke the query functions with appropriate parameters by cloning a working REST JSON API example below
+
+>see the crud_controller.rs
+> git clone 
 
 
 
