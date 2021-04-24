@@ -441,9 +441,12 @@ async fn main() -> Result<(), std::io::Error> {
 
 
 
-## REAL WORKING APP EXAMPLE USING ACTIX WEB, YOU MAY USE ANY WEB FRAMEWORK YOU WANT
+### FOR A WORKING APP EXAMPLE USING ACTIX WEB
 
-Check how to invoke the query functions with appropriate parameters by cloning a working REST JSON API example see the *crud_controller.rs*
+you can check how to invoke the query functions with appropriate parameters by cloning a working REST JSON API example below
+
+>see the *crud_controller.rs*
+> 
 
 
 
