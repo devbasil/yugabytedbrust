@@ -35,8 +35,8 @@ This is a rust crud example for connecting and interacting with yugabyte's datab
     |LIST      | Vec<T> see how to create udt using [list](https://docs.yugabyte.com/latest/api/ycql/ddl_create_type/)|
     |MAP       | HashMap<String, T>  |
    
-*  **TO DO**
-- [*] Add primitive types YCQL crud example
+TO DO
+- [x] Add primitive types YCQL crud example
 - [] Add Complex types example eg. UDT- List and Map
 - [] Add JsonB example
 - [] Add full list of *Yugabyte data type and corresponding RUST Driver Type Mapping* only after testing
