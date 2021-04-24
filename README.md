@@ -37,9 +37,9 @@ This is a rust crud example for connecting and interacting with yugabyte's datab
    
 TO DO
 - [x] Add primitive types YCQL crud example
-- [] Add Complex types example eg. UDT- List and Map
-- [] Add JsonB example
-- [] Add full list of *Yugabyte data type and corresponding RUST Driver Type Mapping* only after testing
+- [ ] Add Complex types example eg. UDT- List and Map
+- [ ] Add JsonB example
+- [ ] Add full list of *Yugabyte data type and corresponding RUST Driver Type Mapping* only after testing
 
 
 ## **EXAMPLES** 
