@@ -1,7 +1,7 @@
 # Yugabyte DB Rust CRUD Examples
 
 This is a rust crud example for connecting and interacting with yugabyte's database *YCQL API*.
-[YugabyteDB](https://www.yugabyte.com/). is a high-performance, cloud-native distributed SQL database. It is fully Open Source and has great **default Enterprise Grade features** in the free version wich makes it a much better solution compared to other similar open source distributed database projects.
+[YugabyteDB](https://www.yugabyte.com/). is a high-performance, cloud-native distributed SQL database. It is fully Open Source and has great **default Enterprise Grade features** in the free version which makes it a much better solution compared to other similar open source distributed database projects.
 
 
 ## Prerequisite
