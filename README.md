@@ -428,16 +428,16 @@ async fn main() -> Result<(), std::io::Error> {
 
 
 
-> create_new_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/create
+> create_new_user_profile_query() inside your controller function eg http://127.0.0.1:4055/api_v1/create
 
 
-> select_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/read
+> select_user_profile_query() inside your controller function eg http://127.0.0.1:4055/api_v1/read
 
 
-> update_full_name_and_age_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/update
+> update_full_name_and_age_query() inside your controller function eg http://127.0.0.1:4055/api_v1/update
 
 
-> delete_user_profile_query() inside your controller function route eg http://127.0.0.1:4055/api_v1/delete
+> delete_user_profile_query() inside your controller function eg http://127.0.0.1:4055/api_v1/delete
 
 ### FOR A WORKING APP EXAMPLE USING ACTIX WEB
 
