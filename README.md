@@ -443,5 +443,6 @@ async fn main() -> Result<(), std::io::Error> {
 
 You can check how to invoke the query functions with appropriate parameters by cloning a working REST JSON API example below
 
-> see the crud_controller.rs
+> See the crud_controller.rs
+
 > git clone https://github.com/devbasil/yugabytedbrust.git
