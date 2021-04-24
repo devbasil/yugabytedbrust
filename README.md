@@ -444,3 +444,84 @@ You can check how to invoke the query functions with appropriate parameters by c
 > See the crud_controller.rs
 
 > git clone https://github.com/devbasil/yugabytedbrust.git
+
+After cloning the project, for test you can post JSON request.
+
+[POST] http://127.0.0.1:4055/api_v1/create_user
+```json
+   {
+    "email_address": "demo2@demo2.com",
+    "full_name": "Jane Doe",
+    "age": 26,
+    "comment": null
+    }
+```
+[RESPONSE] 200 OK
+```json
+ {
+    "custom_status": "SUCCESS",
+    "message": "User profile created successfuly",
+    "status": 200,
+    "data": null
+}
+```
+[POST] http://127.0.0.1:4055/api_v1/get_user_profile
+```json
+{
+    "user_id": "056f0983-b3c9-49c1-872f-574382971dec", // replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+    "email_address": "demo2@demo2.com"
+}
+```
+[RESPONSE] 200 OK
+```json
+{
+    "custom_status": "SUCCESS",
+    "message": "success",
+    "status": 200,
+    "data": [
+        {
+            "user_id": "056f0983-b3c9-49c1-872f-574382971dec",
+            "time_uuid_order": "6083250b-0000-1000-8000-010203040506",
+            "email_address": "demo2@demo2.com",
+            "full_name": "Jane Doe",
+            "age": 26,
+            "comment": null
+        }
+    ]
+}
+```
+
+[POST] http://127.0.0.1:4055/api_v1/update_user_profile
+```json
+{
+    "user_id": "056f0983-b3c9-49c1-872f-574382971dec", // replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+    "time_uuid_order": "6083250b-0000-1000-8000-010203040506",// replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+    "age": 25,
+    "full_name": "Update Jane Doe"
+}
+```
+[RESPONSE] 200 OK
+```json
+{
+    "custom_status": "SUCCESS",
+    "message": "User profile updated successfully",
+    "status": 200,
+    "data": null
+}
+```
+[POST] http://127.0.0.1:4055/api_v1/delete_user
+```json
+{
+  "user_id": "39f86922-c2a8-444c-9947-b99506854207",// replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+    "time_uuid_order": "60831fa5-0000-1000-8000-010203040506"// replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+}
+```
+[RESPONSE] 200 OK
+```json
+{
+    "custom_status": "SUCCESS",
+    "message": "Successfuly deleted profile",
+    "status": 200,
+    "data": null
+}
+```
