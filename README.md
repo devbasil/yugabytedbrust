@@ -375,7 +375,7 @@ pub async fn select_user_profile_query(
 > And then use it like this  **let mut current_ycql_conn   = ycql_connection_data.lock().unwrap();**
 
 
-##  main function example initializizing using Actix Web 
+##  main function example initializing db using Actix Web framework
 
 ```rust
 #[actix_web::main]
