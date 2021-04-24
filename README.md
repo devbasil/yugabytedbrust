@@ -447,6 +447,8 @@ You can check how to invoke the query functions with appropriate parameters by c
 
 After cloning the project, for test you can post JSON request.
 
+Replace all  **user_id** and **time_uuid_order** field values in the json request below, by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get valid results.
+
 [POST] http://127.0.0.1:4055/api_v1/create_user
 ```json
    {
@@ -468,7 +470,7 @@ After cloning the project, for test you can post JSON request.
 [POST] http://127.0.0.1:4055/api_v1/get_user_profile
 ```json
 {
-    "user_id": "056f0983-b3c9-49c1-872f-574382971dec", // replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+    "user_id": "056f0983-b3c9-49c1-872f-574382971dec", 
     "email_address": "demo2@demo2.com"
 }
 ```
@@ -494,8 +496,8 @@ After cloning the project, for test you can post JSON request.
 [POST] http://127.0.0.1:4055/api_v1/update_user_profile
 ```json
 {
-    "user_id": "056f0983-b3c9-49c1-872f-574382971dec", // replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
-    "time_uuid_order": "6083250b-0000-1000-8000-010203040506",// replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+    "user_id": "056f0983-b3c9-49c1-872f-574382971dec", 
+    "time_uuid_order": "6083250b-0000-1000-8000-010203040506",
     "age": 25,
     "full_name": "Update Jane Doe"
 }
@@ -512,8 +514,8 @@ After cloning the project, for test you can post JSON request.
 [POST] http://127.0.0.1:4055/api_v1/delete_user
 ```json
 {
-  "user_id": "39f86922-c2a8-444c-9947-b99506854207",// replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
-    "time_uuid_order": "60831fa5-0000-1000-8000-010203040506"// replace this value by running: SELECT * FROM demo_ycql_service_keyspace.user_profile; to get your own id otherwise you will receive data null field
+  "user_id": "39f86922-c2a8-444c-9947-b99506854207",
+    "time_uuid_order": "60831fa5-0000-1000-8000-010203040506"
 }
 ```
 [RESPONSE] 200 OK
