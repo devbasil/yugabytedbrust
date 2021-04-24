@@ -115,7 +115,7 @@ In production consider using *StaticPasswordAuthenticator* instead of *NoneAuthe
 
 In the **configure_yugabyte_db_session** function below, we also need to configure and build each node using the **NodeTcpConfigBuilder** struct, this will configure TCP connection for a node, we can then use **ClusterTcpConfig** which holds per node TCP config, in our use case we have only used one node.
 
-We will use a *RoundRobin* load balancing Strategy implementation provided by *cdrs_tokio*, **NOTE: You may use your own load balancing strategy if this does not satsify your use case.**
+We will use a *RoundRobin* load balancing Strategy implementation provided by *cdrs_tokio*, **NOTE: You may use your own load balancing strategy if this does not satisfy your use case.**
 
 ```rust
 
@@ -151,7 +151,7 @@ We will use the **user_id** column as a **primary key** which in essence is the 
 
 Read about [Yugabyte data modeling](https://docs.yugabyte.com/latest/develop/learn/data-modeling-ycql/) here.
 
-**NOTE:** the use of primitive types below, which will be automatically converted to and from the corresponding RUST data types under the hood by the Rust driver, **READ Prerequisites section above about *Yugabyte and RUST Driver Type Mapping*, the complete list will be added only after testing, the listed ones has been tested**.
+**NOTE:** the use of primitive types below, which will be automatically converted to and from the corresponding RUST data types under the hood by the Rust driver, **READ Prerequisites section above about *Yugabyte and RUST Driver Type Mapping*, the complete list will be added only after testing, the listed ones have been tested**.
 
 ```rust
 pub async fn create_demo_ycql_user_profile_table(yugabyte_ycql_session: &mut CurrentYcqlDbSession) ->YugabyteDBResult<()> {
@@ -311,9 +311,7 @@ pub async fn select_user_profile_query(
 ### E
 * **Update** function named **update_full_name_and_age_query**, takes five arguments, *ycql_session, user_id, time_uuid_order, age, and full_name*, the session is the mutable yugabyte connetion session of type *CurrentYcqlDbSession*  returned by calling the **configure_yugabyte_db_session** function. 
 
-**NOTE** time_uuid_order is of type *Uuid*, in the query but in yugabyte it is natively type *TIMEUUID* this will be correctly mapped as you will be using V1 of Uuid as the TIMEUUID.
-
-The **query_values!** prepares the values, do the query and then propagate any errors to the calling function.
+**NOTE** time_uuid_order is of type *Uuid* in the query, but in yugabyte it is natively of type *TIMEUUID* this will be correctly mapped because you will be using V1 of Uuid as the TIMEUUID.
 
 ```rust
  pub async fn update_full_name_and_age_query(
@@ -372,12 +370,12 @@ The **query_values!** prepares the values, do the query and then propagate any e
 > TIP 2: It is upto you to choose the web framework you are most comfortable working with.
 
 
->TIP 4: If you are using Actix-web 4.0.0-beta.5 or above framework here is how you would extract the session data from all your controller function use the following
-> extract session connection by passing  **ycql_connection_data: web::Data<Mutex<CurrentYcqlDbSession>>** as an argument
-> and then use it like this  **let mut current_ycql_conn   = ycql_connection_data.lock().unwrap();**
+>TIP 4: If you are using Actix-web 4.0.0-beta.5 or above framework, here is how you would extract the session data from all your controller.
+> Extract session connection by passing  **ycql_connection_data: web::Data<Mutex<CurrentYcqlDbSession>>** as an argument
+> And then use it like this  **let mut current_ycql_conn   = ycql_connection_data.lock().unwrap();**
 
 
-##  main function example using Actix Web 
+##  main function example initializizing using Actix Web 
 
 ```rust
 #[actix_web::main]
@@ -424,9 +422,9 @@ async fn main() -> Result<(), std::io::Error> {
 ```
 
 
-> TIP 3: Depending on the Rust web framework of your choice interacting with the yugabyte's YCQL API is as simple as calling the following functions and then passing the appropriate parameters. example
+> TIP 3: Depending on the Rust web framework of your choice, interacting with the yugabyte's YCQL API is as simple as calling the following functions and then passing the appropriate parameters. 
 
-
+*see a full working example of this by cloning the project* **git clone https://github.com/devbasil/yugabytedbrust.git**
 
 > create_new_user_profile_query() inside your controller function eg http://127.0.0.1:4055/api_v1/create
 
