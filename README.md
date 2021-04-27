@@ -276,7 +276,7 @@ pub async fn create_new_user_profile_query(
 ### D
 * **Read** function named **select_user_profile_query**, takes three arguments, the first one is a mutable yugabyte connetion session of type *CurrentYcqlDbSession*  returned by calling the **configure_yugabyte_db_session** function. The second one is **user_id** of type *Uuid* column and an email address column named **email_address** of type *text*. You can then query data from *user_profile* WHERE the given values matches.
 
-The **get_body** fuction extracts the Yugabyte result body and then **into_rows** function converts the body into RUST struct, we then get an array of the rows and return results to the calling fuction.
+The **get_body** function extracts the Yugabyte result body and then **into_rows** function converts the body into RUST struct, we then get an array of the rows and return results to the calling fuction.
 
 ```rust
 
@@ -370,7 +370,7 @@ pub async fn select_user_profile_query(
 > TIP 2: It is upto you to choose the web framework you are most comfortable working with.
 
 
->TIP 4: If you are using Actix-web 4.0.0-beta.5 or above framework, here is how you would extract the session data from all your controller.
+>TIP 3: If you are using Actix-web 4.0.0-beta.5 or above framework, here is how you would extract the session data from all your controller.
 > Extract session connection by passing  **ycql_connection_data: web::Data<Mutex<CurrentYcqlDbSession>>** as an argument
 > And then use it like this  **let mut current_ycql_conn   = ycql_connection_data.lock().unwrap();**
 
@@ -422,7 +422,7 @@ async fn main() -> Result<(), std::io::Error> {
 ```
 
 
-> TIP 3: Depending on the Rust web framework of your choice, interacting with the yugabyte's YCQL API is as simple as calling the following functions and then passing the appropriate parameters. 
+> TIP 4: Depending on the Rust web framework of your choice, interacting with the yugabyte's YCQL API is as simple as calling the following functions and then passing the appropriate parameters. 
 
 *see a full working example of this by cloning the project* **git clone https://github.com/devbasil/yugabytedbrust.git**
 
